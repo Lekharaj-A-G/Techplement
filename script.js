@@ -1,5 +1,5 @@
 const apiKey = `7db5fc05c8813fc632fc47d5a12e0e9a`;
-// const city = "belagavi";
+
 
 async function fetchWeatherData(city) {
   try {
@@ -19,8 +19,8 @@ async function fetchWeatherData(city) {
     updateWeatherUI(data);
   } catch (error) {
     console.error(error);
-    displayErrorMessage(error.message); // Display error message to the user
-    resetWeatherUI(); // Reset UI if there is an error
+    displayErrorMessage(error.message); 
+    resetWeatherUI();
   }
 }
 
@@ -34,13 +34,13 @@ const descriptionText = document.querySelector(".description-text");
 const date = document.querySelector(".date");
 const descriptionIcon = document.querySelector(".description i");
 
-// fetchWeatherData();
+
 
 function displayErrorMessage(message) {
-  // Assuming you have a div in your HTML with the class 'error-message'
+
   const errorMessageElement = document.querySelector(".error-message");
   errorMessageElement.textContent = message;
-  errorMessageElement.style.display = "block"; // Show the error message element
+  errorMessageElement.style.display = "block"; 
 }
 
 function resetWeatherUI() {
@@ -51,16 +51,16 @@ function resetWeatherUI() {
   visibility.textContent = "";
   descriptionText.textContent = "";
   date.textContent = "";
-  descriptionIcon.className = ""; // Clear previous weather icon class
+  descriptionIcon.className = ""; 
 }
 
 function updateWeatherUI(data) {
   const errorMessageElement = document.querySelector(".error-message");
   if (errorMessageElement) {
-    errorMessageElement.style.display = "none"; // Hide the error message
+    errorMessageElement.style.display = "none"; 
   }
 
-  // Remove the hidden class from all components
+  
   document
     .querySelectorAll(
       ".city-date-section, .temperature-info, .additional-info, .error-message"
